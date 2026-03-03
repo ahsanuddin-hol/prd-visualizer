@@ -1,0 +1,40 @@
+.breadcrumbsContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    color: var(--text-secondary);
+}
+
+.crumbLink {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.crumbLink:hover {
+    color: var(--text-primary);
+}
+
+.separator {
+    color: var(--text-tertiary);
+    display: flex;
+    align-items: center;
+}
+
+.currentCrumb {
+    color: var(--text-primary);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.homeIcon {
+    width: 16px;
+    height: 16px;
+}

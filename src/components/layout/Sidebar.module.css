@@ -1,0 +1,173 @@
+.sidebar {
+    width: 280px;
+    height: 100vh;
+    background: rgba(10, 10, 31, 0.6);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 50;
+    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-2xl);
+    padding: 0 var(--space-sm);
+    min-height: 40px;
+}
+
+.logoIcon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    flex-shrink: 0;
+}
+
+.logoText {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    flex: 1;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+
+.navItem:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.icon {
+    flex-shrink: 0;
+}
+
+.label {
+    white-space: nowrap;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+.active {
+    color: var(--text-primary);
+}
+
+.activeIndicator {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(99, 102, 241, 0.1);
+    border-radius: var(--radius-md);
+    z-index: -1;
+    border-left: 3px solid var(--accent-primary);
+}
+
+.footer {
+    margin-top: auto;
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-subtle);
+}
+
+.settingsBtn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-md);
+    width: 100%;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    font-size: 14px;
+}
+
+.settingsBtn:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.toggleBtn {
+    position: absolute;
+    top: 24px;
+    right: -12px;
+    width: 24px;
+    height: 24px;
+    background: var(--surface-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-secondary);
+    z-index: 60;
+    transition: all 0.2s;
+}
+
+.toggleBtn:hover {
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+/* Collapsed State Overrides */
+.collapsed {
+    width: 80px;
+    padding: var(--space-lg) var(--space-sm);
+}
+
+.collapsed .logoText,
+.collapsed .label,
+.collapsed .settingsBtn span {
+    display: none;
+    opacity: 0;
+}
+
+.collapsed .logoContainer {
+    justify-content: center;
+    padding: 0;
+}
+
+.collapsed .navItem {
+    justify-content: center;
+}
+
+.collapsed .settingsBtn {
+    justify-content: center;
+}

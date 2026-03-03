@@ -1,0 +1,1352 @@
+/* Main Container mimicking the HTML structure wrapper */
+.htmlMirrorContainer {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 24px;
+    background-color: #f8fafc;
+    /* neutral-50 */
+    position: relative;
+    /* Context for absolute positioning of toast */
+}
+
+.mainContentArea {
+    padding: 0 40px 24px 42px;
+    height: 100%;
+    position: relative;
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+/* 1. Header Card */
+.cardBox {
+    padding: 24px;
+    background-color: white;
+    border: 1px solid #e5e5e5;
+    /* neutral-75 */
+    border-radius: 4px;
+    margin-bottom: 16px;
+}
+
+.grayBg {
+    background-color: rgb(245, 247, 249) !important;
+    /* neutral-50 */
+    border: 1px solid transparent !important;
+    /* Maintain 1px spacing to align with bordered cards */
+}
+
+.headerTopRow {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.headerTitleGroup {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.headerRight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.idText {
+    font-size: 14px;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(96 122 147 / var(--tw-text-opacity));
+    letter-spacing: 0.018px;
+    margin: 0;
+}
+
+/* Priority Badges */
+.statusBadgeBase {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+    gap: 4px;
+    white-space: nowrap;
+}
+
+.badgeIcon {
+    width: 24px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* P1 - High (Red) */
+.statusBadgeP1 {
+    composes: statusBadgeBase;
+    color: #ff8a8a;
+    background-color: #fff5f5;
+    border: 1px solid #ff8a8a;
+}
+
+.statusBadgeP1 .badgeIcon {
+    background-color: #ff8a8a;
+}
+
+/* P2 - Medium (Yellow/Orange) */
+.statusBadgeP2 {
+    composes: statusBadgeBase;
+    color: #fccf4d;
+    background-color: #fffcf0;
+    border: 1px solid #fccf4d;
+}
+
+.statusBadgeP2 .badgeIcon {
+    background-color: #fccf4d;
+}
+
+/* P3 - Low (Blue) */
+.statusBadgeP3 {
+    composes: statusBadgeBase;
+    color: #8bbaf9;
+    background-color: #f0f7ff;
+    border: 1px solid #8bbaf9;
+}
+
+.statusBadgeP3 .badgeIcon {
+    background-color: #8bbaf9;
+}
+
+/* Status Badges */
+.statusBadgeUnassigned {
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4b6b9b;
+    background-color: #ebf1f7;
+    white-space: nowrap;
+}
+
+.statusBadgeInProgress {
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #0369a1;
+    /* sky-700 */
+    background-color: #e0f2fe;
+    /* sky-100 */
+    white-space: nowrap;
+}
+
+.statusBadgeInProgress {
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #9d8223;
+    /* Olive/Brown tone from image */
+    white-space: nowrap;
+    border: 1px solid #7a651a;
+}
+
+.statusBadgeComply {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #065f46;
+    /* Dark Green tone from image */
+    white-space: nowrap;
+}
+
+.statusBadgeInactive {
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #64748b;
+    /* Gray tone for inactive */
+    white-space: nowrap;
+}
+
+.headerMainTitle {
+    color: #003366;
+    /* primary-400 */
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+.headerEditRow {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin: 12px 0;
+}
+
+.btnEditAlias {
+    font-size: 12px;
+    font-weight: 700;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid #003366;
+    background-color: white;
+    color: #003366;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Stepper */
+.stepperContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.stepperItem {
+    display: flex;
+    align-items: center;
+}
+
+.flexBox {
+    display: flex;
+    align-items: center;
+}
+
+.stepperTextGroup {
+    margin-left: 8px;
+}
+
+.stepTitle {
+    color: #64748b;
+    /* neutral-500 */
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.stepTitleInactive {
+    color: #64748b;
+    /* neutral-500 */
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.stepDate {
+    --tw-text-opacity: 1;
+    color: rgb(96 122 147 / var(--tw-text-opacity));
+    font-size: 14px;
+    margin: 0;
+}
+
+.stepDivider {
+    display: flex;
+    align-items: center;
+    width: 56px;
+    padding: 0 8px;
+}
+
+.stepLine {
+    border-top: 3px solid #f5f5f5;
+    /* neutral-100 */
+    width: 100%;
+}
+
+.headerActionButtons {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.btnInactivate {
+    font-weight: 700;
+    font-size: 12px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 4px;
+    background: transparent;
+    border: 1px solid #003366;
+    /* primary-400 */
+    color: #003366;
+    cursor: pointer;
+}
+
+.btnMore {
+    height: 40px;
+    padding: 0 8px;
+    border: none;
+    background: transparent;
+    color: #94a3b8;
+    /* neutral-400 */
+    cursor: pointer;
+}
+
+/* 2. Compliance Info */
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.sectionTitle {
+    color: #003366;
+    /* primary-300? user code says primary-300 but color seems dark blue */
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.btnHeaderPrimary {
+    font-weight: 700;
+    font-size: 12px;
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: none;
+    background-color: #003366;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btnPrimary {
+    font-weight: 700;
+    font-size: 14px;
+    height: 48px;
+    padding: 0 24px;
+    border-radius: 5px;
+    border: none;
+    background-color: #003366;
+    /* primary-main */
+    color: white;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.formContainer {
+    display: flex;
+    gap: 32px;
+}
+
+.formColumn {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.formRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+.labelCol {
+    width: 50%;
+    --tw-text-opacity: 1;
+    color: rgb(96 122 147 / var(--tw-text-opacity));
+    font-size: 14px;
+}
+
+.valueColBold {
+    width: 50%;
+    color: #94a3b8;
+    /* neutral-400 */
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.linkText {
+    color: #0ea5e9;
+    /* info-300 */
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 8px;
+}
+
+/* 3. Split Section */
+.splitSection {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    margin-top: 16px;
+}
+
+.tabsContainer {
+    flex: 1;
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 24px;
+}
+
+.collabContainer {
+    width: 50%;
+}
+
+.tabHeader {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tabBtn {
+    padding: 4px 8px;
+    border: none;
+    background: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #64748b;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+.activeTab {
+    color: #003366;
+    border-bottom-color: #003366;
+}
+
+.tabBodyCard {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    padding: 24px;
+    margin-top: 16px;
+}
+
+.tabActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.btnTextPrimary {
+    font-weight: 700;
+    font-size: 14px;
+    color: #0ea5e9;
+    /* info-300 */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.blueAlertBox {
+    background-color: #0ea5e9;
+    /* info-300 actually looks like blue block in user HTML? No, user html has bg-info-300 text-white */
+    color: white;
+    padding: 8px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.progressSection {
+    margin: 16px 0;
+}
+
+.progressTrack {
+    background-color: rgba(0, 51, 102, 0.2);
+    border-radius: 999px;
+    height: 10px;
+    width: 100%;
+}
+
+.progressBar {
+    background-color: #003366;
+    height: 10px;
+    border-radius: 999px;
+}
+
+.progressLabel {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #94a3b8;
+    /* neutral-400 */
+    margin-top: 4px;
+}
+
+.emptyStateContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+}
+
+.emptyText {
+    font-size: 12px;
+    font-weight: 600;
+    color: #cbd5e1;
+    /* neutral-300 */
+    margin-top: 12px;
+}
+
+/* Toast Notification */
+.toastContainer {
+    position: absolute;
+    /* Relative to htmlMirrorContainer */
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3000;
+    pointer-events: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.toast {
+    pointer-events: auto;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    animation: slideInDown 0.3s ease-out forwards;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 300px;
+}
+
+.toastSuccess {
+    background-color: #ecfdf5;
+    /* emerald-50 */
+    color: #064e3b;
+    /* emerald-900 */
+}
+
+.toastError {
+    background-color: #fef2f2;
+    /* red-50 */
+    color: #991b1b;
+    /* red-800 */
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Collaboration */
+.collabTitle {
+    font-size: 14px;
+    font-weight: 700;
+    color: #64748b;
+    margin-bottom: 16px;
+    margin-top: 0;
+}
+
+.editorContainer {
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    background: white;
+    margin-bottom: 16px;
+}
+
+.editorToolbar {
+    background-color: #f8fafc;
+    padding: 8px 16px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: flex;
+    gap: 8px;
+}
+
+.toolbarIcon {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+}
+
+.editorArea {
+    padding: 16px;
+    min-height: 100px;
+    color: #94a3b8;
+}
+
+.collabActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.btnText {
+    font-weight: 700;
+    font-size: 14px;
+    color: #0ea5e9;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.actionWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    background-color: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 8px 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    z-index: 50;
+    min-width: 160px;
+}
+
+.dropdownItem {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #003366;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.dropdownItem:hover {
+    background-color: #f8fafc;
+}
+
+/* Edit Form Styles */
+.inputField,
+.selectField,
+.textareaField {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #334155;
+    background-color: white;
+    outline: none;
+    transition: border-color 0.2s;
+    font-family: inherit;
+}
+
+.inputField:focus,
+.selectField:focus,
+.textareaField:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.1);
+}
+
+.textareaField {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.inputField::placeholder,
+.textareaField::placeholder {
+    color: #94a3b8;
+    opacity: 1;
+}
+
+.placeholderColor {
+    color: #94a3b8;
+}
+
+.btnCancel {
+    font-weight: 600;
+    font-size: 14px;
+    color: #0f172a;
+    background: none;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.btnSave {
+    font-weight: 700;
+    font-size: 14px;
+    height: 48px;
+    padding: 0 24px;
+    color: white;
+    background-color: #94a3b8;
+    /* Matches the "Save Change" gray button in screenshot */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.btnSavePrimary {
+    background-color: #003366;
+    /* Active state if needed */
+    color: white;
+}
+
+.btnSaveActive {
+    background-color: #003366 !important;
+}
+
+.btnReset {
+    background: none;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    padding: 8px;
+    margin-right: 8px;
+    cursor: pointer;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    width: 48px;
+}
+
+.btnReset:hover {
+    background-color: #f1f5f9;
+}
+
+/* Multi-select Dropdown */
+.multiSelectWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.multiSelectTrigger {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.2s;
+    min-height: 42px;
+}
+
+.multiSelectTrigger.active {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.1);
+}
+
+.selectedText {
+    color: #334155;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 8px;
+    flex: 1;
+}
+
+.placeholderText {
+    color: #94a3b8;
+    /* neutral-400 */
+}
+
+.triggerIcons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748b;
+}
+
+.clearIcon {
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+.clearIcon:hover {
+    color: #ef4444;
+}
+
+.clearableInputWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.dateClearIcon {
+    position: absolute;
+    right: 30px;
+    /* Space for the calendar picker */
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #94a3b8;
+    background: white;
+    /* Cover standard input bg if needed */
+    padding: 2px;
+}
+
+.dateClearIcon:hover {
+    color: #ef4444;
+}
+
+/* For Custom Group Select */
+.groupSelectDropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    margin-top: 4px;
+    overflow: hidden;
+}
+
+.groupOption {
+    padding: 10px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #334155;
+}
+
+.groupOption:hover {
+    background-color: #f8fafc;
+}
+
+.clearIcon:hover {
+    color: #ef4444;
+}
+
+.rotate180 {
+    transform: rotate(180deg);
+    transition: transform 0.2s;
+}
+
+.multiSelectDropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 4px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    z-index: 60;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dropdownBackdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 55;
+    background: transparent;
+    cursor: default;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #334155;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 4px;
+}
+
+.checkboxLabel:hover {
+    background-color: #f8fafc;
+}
+
+.checkboxLabel input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    border: 1px solid #cbd5e1;
+    cursor: pointer;
+}
+
+/* Modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: white;
+    border-radius: 8px;
+    width: 600px;
+    max-width: 90%;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.modalHeader {
+    padding: 16px 24px;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalHeader h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.btnClose {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.modalBody {
+    padding: 24px;
+    flex: 1;
+}
+
+.modalFooter {
+    padding: 16px 24px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btnBack {
+    font-weight: 600;
+    font-size: 14px;
+    color: #0f172a;
+    background: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Modal Content Styles */
+.inviteSection {
+    margin-bottom: 24px;
+}
+
+.inviteSection label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+}
+
+.topRightAction {
+    position: absolute;
+    top: -64px;
+    right: 0;
+}
+
+.btnResetState {
+    background-color: white;
+    border: 1px solid #ef4444;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #ef4444;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btnResetState:hover {
+    background-color: #fef2f2;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.1);
+}
+
+.searchWrapper {
+    width: 100%;
+}
+
+.suggestionList {
+    margin-top: 4px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    max-height: 150px;
+    overflow-y: auto;
+    background: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.suggestionItem {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #334155;
+}
+
+.suggestionItem:hover {
+    background-color: #f8fafc;
+}
+
+.memberList {
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 16px;
+    min-height: 200px;
+}
+
+.headerActionButtons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.memberRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.memberRow:last-child {
+    border-bottom: none;
+}
+
+.memberInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.roleSelect {
+    padding: 6px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #334155;
+    background-color: white;
+}
+
+.memberName {
+    font-weight: 500;
+    font-size: 14px;
+    color: #0f172a;
+}
+
+.memberActions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.activeStatus {
+    font-size: 12px;
+    font-weight: 700;
+    color: #003366;
+}
+
+/* Confirmation Modal */
+.modalContentConfirm {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    width: 440px;
+    /* Specific width */
+    max-width: 90vw;
+}
+
+.modalTitleConfirm {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+}
+
+.modalText {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 16px;
+}
+
+.obligationBox {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 13px;
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.modalActionsRight {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btnGhost {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    background: transparent;
+    border: 1px solid transparent;
+}
+
+.btnGhostDanger {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #991b1b;
+    /* red-800 */
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.btnGhostDanger:hover {
+    background-color: #fef2f2;
+}
+
+.btnGhost:hover {
+    background-color: #f1f5f9;
+}
+
+.btnRemove {
+    background-color: #ef4444;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+/* Activity List Styles */
+.activityList {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 16px;
+}
+
+.activityItem {
+    display: flex;
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.activityItem:last-child {
+    border-bottom: none;
+}
+
+.activityAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #3b82f6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.activityContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.activityText {
+    font-size: 14px;
+    color: #374151 !important;
+    line-height: 1.5;
+}
+
+.activityUser {
+    font-weight: 700;
+    color: #111827 !important;
+}
+
+.activityTime {
+    font-size: 12px;
+    color: #6b7280 !important;
+}
+
+@keyframes highlightPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+        transform: scale(1.02);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+        transform: scale(1);
+    }
+}
+
+.highlight {
+    animation: highlightPulse 2s infinite;
+    border: 2px solid #10b981 !important;
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes highlightPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+        transform: scale(1.02);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+        transform: scale(1);
+    }
+}
+
+.highlight {
+    animation: highlightPulse 2s infinite;
+    border: 2px solid #10b981 !important;
+    position: relative;
+    z-index: 10;
+}
+
+.pointer {
+    position: fixed;
+    width: 32px;
+    height: 32px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="black" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"></path></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 9999;
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.click {
+    transform: scale(0.8);
+}
+
+.automationBanner {
+    position: fixed;
+    top: 24px;
+    /* Below header/breadcrumbs approx */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #e0f2fe;
+    color: #0369a1;
+    border: 2px solid #0ea5e9;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 10000;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 400px;
+    justify-content: center;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
